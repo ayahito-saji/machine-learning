@@ -1,0 +1,13 @@
+version: '2'
+services:
+  work:
+    build: .
+    volumes:
+      - ./work:/work
+    ports:
+      - 8888:8888
+    expose:
+      - 8888
+    stdin_open: true
+    command: jupyter notebook --port 8888 --ip=0.0.0.0 --allow-root
+    tty: true
